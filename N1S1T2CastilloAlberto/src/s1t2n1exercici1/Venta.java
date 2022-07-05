@@ -18,7 +18,7 @@ public class Venta {
 	int size = this.listProducto.size();
 	float total =0;
 	if(size <1) {
-		VentaBuidaException  error = new VentaBuidaException("Para hacer una venta primero debes añadir productos") ;
+		VentaBuidaException  error = new VentaBuidaException() ;
 		System.out.println(error.getMessage());
 	}else {
 	
