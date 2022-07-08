@@ -16,8 +16,17 @@ public class MainT2N1Exercici1 {
 		listProducto.add(p3);
 		
 		ArrayList<Producto> listProductoVacio = new ArrayList<Producto>();
-		Venta compra = new Venta(listProductoVacio);
 		
+		try {
+			
+		Venta compra = new Venta(listProductoVacio);
+		throw new VentaBuidaException() ;
+		
+		}catch(VentaBuidaException e ) {
+			
+			System.err.println(e.getMessage());
+			
+		}
 		/*
 	    Venta compra = new Venta(listProducto);
 		

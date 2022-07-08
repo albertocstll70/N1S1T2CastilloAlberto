@@ -11,16 +11,17 @@ public class Venta {
 
 		this.listProducto = listProducto;
 		this.precioTotal = calcularTotal();
+		
 
 	}
 
+	
+	
+	
 	public float calcularTotal(){
+		
 	int size = this.listProducto.size();
 	float total =0;
-	if(size <1) {
-		VentaBuidaException  error = new VentaBuidaException() ;
-		System.out.println(error.getMessage());
-	}else {
 	
 	for(int i=0; i<size; i++) {
 		
@@ -29,7 +30,7 @@ public class Venta {
 	}
 	
 	
-	}
+	
 		
 	return total;	
 		
