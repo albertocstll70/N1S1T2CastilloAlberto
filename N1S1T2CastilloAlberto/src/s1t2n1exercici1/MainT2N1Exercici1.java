@@ -20,7 +20,7 @@ public class MainT2N1Exercici1 {
 		Venta compra = new Venta(listProductoVacio );
 
 		
-		 //Venta compra = new Venta(listProducto);
+	//	Venta compra = new Venta(listProducto);
 		  
 		// System.out.println(compra);
 		  

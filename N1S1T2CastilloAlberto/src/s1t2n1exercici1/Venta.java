@@ -10,7 +10,16 @@ public class Venta {
 	public Venta(ArrayList<Producto> listProducto) {
 
 		this.listProducto = listProducto;
-		this.precioTotal = calcularTotal();
+		try {
+			this.precioTotal = calcularTotal();
+			if (this.listProducto.size() == 0) {
+				throw new VentaBuidaException();
+			}
+		} catch (VentaBuidaException e) {
+
+			System.err.println(e.getMessage());
+
+		}
 
 	}
 
@@ -19,34 +28,14 @@ public class Venta {
 		int size = this.listProducto.size();
 		float total = 0;
 
-		try {
-			
-			if(size > 0) {
+		for (int i = 0; i < size; i++) {
 
-			for (int i = 0; i < size; i++) {
-
-				total = total + listProducto.get(i).getPrecio();
-			}
-
-			
-			
-			} else {
-			throw new VentaBuidaException();	
-
-			
-			} 
-
-			}catch (VentaBuidaException e) {
-
-				System.err.println(e.getMessage());
-				
-			}
-		
-			return total;
-
+			total = total + listProducto.get(i).getPrecio();
 		}
 
-	
+		return total;
+
+	}
 
 	@Override
 	public String toString() {
