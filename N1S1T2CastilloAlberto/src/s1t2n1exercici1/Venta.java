@@ -19,29 +19,34 @@ public class Venta {
 		int size = this.listProducto.size();
 		float total = 0;
 
-		if (size > 0) {
+		try {
+			
+			if(size > 0) {
 
 			for (int i = 0; i < size; i++) {
 
 				total = total + listProducto.get(i).getPrecio();
 			}
 
-			return total;
-		} else {
-			try {
+			
+			
+			} else {
+			throw new VentaBuidaException();	
 
-				throw new VentaBuidaException();
-			} catch (VentaBuidaException e) {
+			
+			} 
+
+			}catch (VentaBuidaException e) {
 
 				System.err.println(e.getMessage());
-
+				
 			}
-
-			return 0;
+		
+			return total;
 
 		}
 
-	}
+	
 
 	@Override
 	public String toString() {

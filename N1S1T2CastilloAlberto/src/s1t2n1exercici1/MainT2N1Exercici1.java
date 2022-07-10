@@ -17,14 +17,14 @@ public class MainT2N1Exercici1 {
 
 		ArrayList<Producto> listProductoVacio = new ArrayList<Producto>();
 
-		Venta compra = new Venta(listProductoVacio);
+		Venta compra = new Venta(listProductoVacio );
 
-		/*
-		 * Venta compra = new Venta(listProducto);
-		 * 
-		 * System.out.println(compra);
-		 * 
-		 */
+		
+		 //Venta compra = new Venta(listProducto);
+		  
+		// System.out.println(compra);
+		  
+		 
 
 		/*
 		 * Escribe el código necesario para generar y capturar una excepción de tipo
