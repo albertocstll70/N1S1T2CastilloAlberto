@@ -7,32 +7,31 @@ public class Venta {
 	private float precioTotal;
 	private ArrayList<Producto> listProducto = new ArrayList<Producto>();
 
-	public Venta(ArrayList<Producto> listProducto)  {
+	public Venta(ArrayList<Producto> listProducto) {
 
-			this.listProducto = listProducto;						
-			
-			try {
-				this.precioTotal = calcularTotal();
-			} catch (VentaBuidaException e) {
-				
+		this.listProducto = listProducto;
+
+		try {
+			this.precioTotal = calcularTotal();
+		} catch (VentaBuidaException e) {
+
 			System.err.println(e.getMessage());
-			}
-			
+		}
 
 	}
 
 	public float calcularTotal() throws VentaBuidaException {
-		
-			int size = this.listProducto.size();
-			float total = 0;
-		if(size==0) {
+
+		int size = this.listProducto.size();
+		float total = 0;
+		if (size == 0) {
 			throw new VentaBuidaException();
-		}else {
+		} else {
 			for (int i = 0; i < size; i++) {
 
 				total = total + listProducto.get(i).getPrecio();
 			}
-			
+
 		}
 		return total;
 
