@@ -7,34 +7,47 @@ public class Venta {
 	private float precioTotal;
 	private ArrayList<Producto> listProducto = new ArrayList<Producto>();
 
-	public Venta(ArrayList<Producto> listProducto) {
+	public Venta(ArrayList<Producto> listProducto)    {
 
 		this.listProducto = listProducto;
-		try {
-			this.precioTotal = calcularTotal();
-			if (this.listProducto.size() == 0) {
-				throw new VentaBuidaException();
-			}
-		} catch (VentaBuidaException e) {
-
-			System.err.println(e.getMessage());
-
-		}
+		
+			
+			
+					try {
+						this.precioTotal = calcularTotal();
+					} catch (VentaBuidaException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				
+					
+			
+				
+			
+		
 
 	}
 
-	public float calcularTotal() {
-
+	public float calcularTotal() throws VentaBuidaException  {
+		
 		int size = this.listProducto.size();
 		float total = 0;
 
+	if(size==0) {
+		throw new VentaBuidaException();
+		
+	}else {
+	
+
+		
 		for (int i = 0; i < size; i++) {
+			
 
 			total = total + listProducto.get(i).getPrecio();
 		}
-
+	}
 		return total;
-
+		
 	}
 
 	@Override
