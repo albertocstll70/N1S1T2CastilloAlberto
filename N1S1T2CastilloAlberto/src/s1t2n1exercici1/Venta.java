@@ -14,8 +14,8 @@ public class Venta {
 		try {
 			this.precioTotal = calcularTotal();
 		} catch (VentaBuidaException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			
+			e.getMessage();
 		}
 
 	}
