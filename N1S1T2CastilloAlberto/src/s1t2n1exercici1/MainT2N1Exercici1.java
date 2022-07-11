@@ -21,7 +21,7 @@ public class MainT2N1Exercici1 {
 
 		// Venta compra = new Venta(listProducto);
 
-		// System.out.println(compra);
+		System.out.println(compra);
 
 		/*
 		 * Escribe el código necesario para generar y capturar una excepción de tipo
